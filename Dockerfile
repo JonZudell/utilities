@@ -1,3 +1,3 @@
-FROM debian
-RUN apt update
-RUN apt install jq curl docker git -y
+FROM alpine
+RUN apk update
+RUN apk add jq curl docker git
