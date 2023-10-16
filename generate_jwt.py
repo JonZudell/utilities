@@ -21,7 +21,7 @@ with open(pem, 'rb') as pem_file:
 
 payload = {
     'iat': int(time.time()),
-    'exp': int(time.time()) + 6000000,
+    'exp': int(time.time()) + 600,
     'iss': app_id
 }
 
