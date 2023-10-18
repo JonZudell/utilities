@@ -1,6 +1,6 @@
 [
     {
-      "image" : "workflow_task_image",
+      "image" : "workflow-task-image",
       "dockerfile" : "./workflow_task/"
     }
   ]
