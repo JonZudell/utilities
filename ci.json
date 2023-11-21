@@ -1,6 +1,10 @@
 [
-    {
-      "image" : "workflow-task-image",
-      "dockerfile" : "./workflow_task/"
-    }
-  ]
+  {
+    "image": "workflow-task-image",
+    "dockerfile": "./workflow_task/"
+  },
+  {
+    "image": "etl",
+    "dockerfile": "./etl/"
+  }
+]
