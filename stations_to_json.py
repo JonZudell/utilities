@@ -4,7 +4,7 @@ import json
 
 def write_json(path, stations_list):
     with open(path, "w") as outfile:
-        outfile.write(json.dumps(stations_list))
+        outfile.write('{' + json.dumps(stations_list) + '}')
 
 def parse_line(line):
     return line[0:11]
