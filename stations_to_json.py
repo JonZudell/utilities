@@ -10,10 +10,10 @@ def parse_line(line):
     return line[0:11]
 
 def read_lines(stations_path):
-    results = { 'stations': []}
+    results = []
     with open(stations_path) as stations:
         for line in stations.readlines():
-            results['stations'].append({"station" : parse_line(line) })
+            results.append({"station" : parse_line(line) })
     return results
 
 if __name__ == "__main__":
