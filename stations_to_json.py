@@ -4,16 +4,16 @@ import json
 
 def write_json(path, stations_list):
     with open(path, "w") as outfile:
-        outfile.write('{' + json.dumps(stations_list) + '}')
+        outfile.write(json.dumps(stations_list))
 
 def parse_line(line):
     return line[0:11]
 
 def read_lines(stations_path):
-    results = []
+    results = { 'stations': []}
     with open(stations_path) as stations:
         for line in stations.readlines():
-            results.append(parse_line(line))
+            results['stations'].append({"station" : parse_line(line) })
     return results
 
 if __name__ == "__main__":
