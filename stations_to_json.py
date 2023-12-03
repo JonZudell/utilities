@@ -18,8 +18,8 @@ def read_lines(stations_path):
         for line in stations.readlines():
             station = get_id(line)
             wmo_id = get_wmo_id(line)
-            # if wmo_id:
-            results.append({"station" : get_id(line), "wmo_id" : wmo_id})
+            if wmo_id:
+                results.append({"station" : get_id(line), "wmo_id" : wmo_id})
     return results
 
 if __name__ == "__main__":
