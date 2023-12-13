@@ -4,7 +4,7 @@ from cassandra.cluster import Cluster
 if __name__ == "__main__":
 
 
-    cluster = Cluster(contact_points=['scylla-us-east-1-us-east-1a-0.scylla.default.svc.cluster.local'])
+    cluster = Cluster(contact_points=['scylla-us-east-1-us-east-1a-0.scylla.svc.cluster.local','scylla-us-east-1-us-east-1a-1.scylla.svc.cluster.local','scylla-us-east-1-us-east-1a-2.scylla.svc.cluster.local'])
     session = cluster.connect()
     session.default_consistency_level = ConsistencyLevel.QUORUM
     session.execute("""
