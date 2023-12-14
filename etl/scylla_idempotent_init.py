@@ -16,8 +16,8 @@ if __name__ == "__main__":
         CREATE TABLE IF NOT EXISTS stations (
                     station_id string,
                     name string,
-                    latitude number,
-                    longitude number,
-                    elevation number,
+                    latitude float,
+                    longitude float,
+                    elevation float,
         )
     """)
