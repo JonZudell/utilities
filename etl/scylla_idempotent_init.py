@@ -6,7 +6,6 @@ if __name__ == "__main__":
 
     cluster = Cluster(contact_points=['scylla-client.scylla.svc.cluster.local'])
     session = cluster.connect()
-    session.default_consistency_level = ConsistencyLevel.QUORUM
     session.execute("""
         CREATE KEYSPACE IF NOT EXISTS weather
         WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '2'}
@@ -14,6 +13,11 @@ if __name__ == "__main__":
 
     session.execute("USE weather")
     session.execute("""
-        CREATE TABLE tbl (pk int PRIMARY KEY, v int)
-        WITH per_partition_rate_limit = {'max_writes_per_second': 1}
+        CREATE TABLE IF NOT EXISTS stations (
+                    station_id string,
+                    name string,
+                    latitude number,
+                    longitude number,
+                    elevation number,
+        )
     """)

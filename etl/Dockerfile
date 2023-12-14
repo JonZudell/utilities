@@ -6,6 +6,6 @@ COPY ./etl/requirements.txt /etl/
 COPY ./etl/stations_to_json.py /etl/
 COPY ./etl/slice_stations.py /etl/
 COPY ./etl/transform_station_csv.py /etl/
-COPY ./etl/scylla_connection.py /etl/
+COPY ./etl/scylla_idempotent_init.py /etl/
 RUN pip install --break-system-packages -r /etl/requirements.txt
 ENTRYPOINT [ "/bin/bash", "-c" ]
