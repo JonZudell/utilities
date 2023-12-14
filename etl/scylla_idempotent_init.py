@@ -14,8 +14,8 @@ if __name__ == "__main__":
     session.execute("USE weather")
     session.execute("""
         CREATE TABLE IF NOT EXISTS stations (
-                    station_id string,
-                    name string,
+                    station_id text,
+                    name text,
                     latitude float,
                     longitude float,
                     elevation float,
