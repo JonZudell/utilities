@@ -31,7 +31,7 @@ def read_lines(stations_path):
             station = get_id(line)
             wmo_id = get_wmo_id(line)
             if wmo_id:
-                results.append({"station" :station, "wmo_id" : wmo_id, "name" : get_name(line), "latitude" : get_latitude(line), "longitude" : get_longitude(line), "elevation" : get_longitude(line)})
+                results.append({"station" :station, "wmo_id" : wmo_id, "name" : get_name(line), "latitude" : get_latitude(line), "longitude" : get_longitude(line), "elevation" : get_elevation(line)})
     return results
 
 if __name__ == "__main__":
