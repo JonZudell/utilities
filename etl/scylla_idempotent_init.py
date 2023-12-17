@@ -13,12 +13,19 @@ if __name__ == "__main__":
 
     session.execute("USE weather")
     session.execute("""
-        CREATE TABLE IF NOT EXISTS stations (
+        CREATE TABLE IF NOT EXISTS stations_v1 (
                     station_id text,
                     name text,
                     latitude float,
                     longitude float,
                     elevation float,
                     PRIMARY KEY (station_id)
+        )
+    """)
+    session.execute("""
+        CREATE TABLE IF NOT EXISTS temperatures_v1 (
+                    station_id text,
+                    date date,
+                    PRIMARY KEY (station_id, date)
         )
     """)
