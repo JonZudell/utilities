@@ -33,8 +33,7 @@ def read_lines(stations_path, session):
     with open(stations_path) as stations:
         for line in stations.readlines():
             station = get_id(line)
-            wmo_id = get_wmo_id(line)
-            if wmo_id:
+            if wmo_id := get_wmo_id(line):
                 name =  get_name(line)
                 latitude = get_latitude(line)
                 longitude = get_longitude(line)
